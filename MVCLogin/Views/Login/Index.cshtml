@@ -1,0 +1,52 @@
+﻿@model MVCLogin.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Css/Login.css" rel="stylesheet" />
+    <title>Login</title>
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+        <table>
+            <tr>
+                <td></td>
+                <td style="text-decoration:underline">Application Name</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.UserName)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.UserName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.PassWord)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.PassWord)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="name" value="Login" />
+                    <input type="reset" name="name" value="Clear" />
+                </td>
+            </tr>
+        </table>
+        }
+    </div>
+</body>
+</html>
