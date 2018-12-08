@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+
 }
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
 </head>
 <body>
     <div id="login-div">
-        @using (Html.BeginForm(FormMethod.Post))
+        @using (Html.BeginForm("Authorize", "Login", FormMethod.Post))
         {
         <table>
             <tr>
@@ -31,12 +32,26 @@
                 </td>
             </tr>
             <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.UserName)</td>
+            </tr>
+            <tr>
                 <td>
                     @Html.LabelFor(model => model.PassWord)
                 </td>
                 <td>
                     @Html.EditorFor(model => model.PassWord)
                 </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <label>@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.UserName)</td>
             </tr>
             <tr>
                 <td></td>
